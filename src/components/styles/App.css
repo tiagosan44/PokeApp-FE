@@ -1,0 +1,9 @@
+.app {
+    padding-top: 8rem;
+    min-height: 100vh;
+    background-image: url(../../images/PokedexBackground.png);
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,12 @@
+.navbar {
+    background-color: #E81111;
+}
+.navbar h3 {
+    margin-top: 0.5rem
+}
+
+.pokedexIcon {
+    width: 4rem;
+    height: 4rem;
+    margin-left: 0.5rem;
+}
