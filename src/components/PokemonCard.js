@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import TypeColors from './helpers/Typecolors.js'
+import './styles/PokemonCard.css'
 
 const PokemonCard = ({ pokemon }) => {
     
@@ -35,24 +36,26 @@ const PokemonCard = ({ pokemon }) => {
                         <img className="card-img-top rounded mx-auto mt-2" 
                             src={pokemon.sprites.front_default}/>
                     </div>
-                    <div className="card-footer">
-                        <div>
-                            <h5>Weight</h5>
-                            <h6>{pokemon.weight / 10} Kg</h6>
+                    <div className="footer-card row">
+                        <div className="col">
+                            <div>
+                                <h5>Weight</h5>
+                                <h6>{pokemon.weight / 10} Kg</h6>
+                            </div>
+                            <div>
+                                <h5>Types</h5>
+                                {pokemon.types.map((type, i) => 
+                                    <h6 className="badge badge-pill mr-1"
+                                        key={type.type.name}
+                                        style={{backgroundColor: `${TypeColors[type.type.name]}`,
+                                            color: 'white'}}
+                                        >
+                                            {type.type.name}
+                                    </h6>    
+                                )} 
+                            </div>
                         </div>
-                        <div>
-                            <h5>Types</h5>
-                            {pokemon.types.map((type, i) => 
-                                <h6 className="badge badge-pill mr-1"
-                                    key={type.type.name}
-                                    style={{backgroundColor: `${TypeColors[type.type.name]}`,
-                                        color: 'white'}}
-                                    >
-                                        {type.type.name}
-                                </h6>    
-                            )} 
-                        </div>
-                        <div>
+                        <div className="col">
                             <h5>Abilities</h5>
                             {pokemon.abilities.map((ability, i) => 
                                 <>

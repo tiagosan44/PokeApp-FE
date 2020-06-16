@@ -1,0 +1,19 @@
+.pokemon-info {
+     flex-grow: 1;
+}
+
+.pokemon-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.abilities-container {
+    margin-top: 2rem;
+}

@@ -1,16 +1,15 @@
 import React, { useState, useEffect }from 'react'
 import PokemonList from '../PokemonList.js'
 import { getAllPokemon, getPokemon } from '../services/PokemonsFetch.js';
+import '../styles/Pokedex.css'
 
 const Pokedex = () => {
 
     const [pokemons, setPokemons] = useState([])
-    const [data, setData] = useState();
     const [nextUrl, setNextUrl] = useState('');
     const [prevUrl, setPrevUrl] = useState('');
-    const [error, setError] = useState();
-
-    const initialURL = 'https://pokeapi.co/api/v2/pokemon'
+    const initialURL = 'http://pokedexbe-env-1.eba-8rgwcvbg.us-east-1.elasticbeanstalk.com/api/pokemon'
+    
     
 
     useEffect(() => {
@@ -48,15 +47,16 @@ const Pokedex = () => {
 
     return (
         <>
-            <div className="btn">
-                <button className="btn btn-danger" onClick={prev}>Prev</button>
-                <button className="btn btn-danger" onClick={next}>Next</button>
-            </div>
+            
+            <button className="page-btn btn btn-danger" onClick={prev}>Prev</button>
+            <button className="page-btn btn btn-danger" onClick={next}>Next</button>
             <div className="row">
                 <div className="col">
-                    <PokemonList data={data} pokemons={pokemons}/>
+                    <PokemonList pokemons={pokemons}/>
                 </div>
             </div>
+            <button className="page-btn btn btn-danger" onClick={prev}>Prev</button>
+            <button className="page-btn btn btn-danger" onClick={next}>Next</button>
         </>
     )
 }

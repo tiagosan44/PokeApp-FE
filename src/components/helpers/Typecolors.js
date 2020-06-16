@@ -1,23 +1,23 @@
 
 const typeColors = {
-    bug: '#729f3f',
-    dragon: '#53a4cf',
-    fairy: '#fdb9e9',
-    fire: '#fd7d24',
-    ghost: '#7b62a3',
-    ground: '#f7de3f',
-    normal: '#a4acaf',
-    psychic: '#f366b9',
-    steel: '#626262',
-    dark: '#707070',
-    electric: '#eed535',
-    fighting: '#d56723',
-    flying: '#3dc7ef',
-    grass: '#9bcc50',
-    ice: '#51c4e7',
-    poison: '#b97fc9',
-    rock: '#a38c21',
-    water: '#4592c4'
+    Bug: '#729f3f',
+    Dragon: '#53a4cf',
+    Fairy: '#fdb9e9',
+    Fire: '#fd7d24',
+    Ghost: '#7b62a3',
+    Ground: '#f7de3f',
+    Normal: '#a4acaf',
+    Psychic: '#f366b9',
+    Steel: '#626262',
+    Dark: '#707070',
+    Electric: '#eed535',
+    Fighting: '#d56723',
+    Flying: '#3dc7ef',
+    Grass: '#9bcc50',
+    Ice: '#51c4e7',
+    Poison: '#b97fc9',
+    Rock: '#a38c21',
+    Water: '#4592c4'
 }
 
 export default typeColors;

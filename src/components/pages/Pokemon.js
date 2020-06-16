@@ -1,19 +1,8 @@
 import React from 'react'
 import TypeColors from '../helpers/Typecolors.js'
-import axios from 'axios'
+import '../styles/Pokemon.css'
 
 export default class Pokemon extends React.Component {
-    state = {
-        
-    }
-
-    componentDidMount() {
-        const { pokemonData } = this.props.location.state
-
-        console.log(pokemonData.pokemon)
-
-        // let { hp, attack, defense, spped, specialAtack, specialDefense } 
-    }
     
     render() {
         const { pokemonData } = this.props.location.state
@@ -45,29 +34,39 @@ export default class Pokemon extends React.Component {
                         </div>   
                     </div>
                     <div className="card-body">
-                        <div className="row align-items-center">
-                            <div className="col-md-3">
+                        {/* <div className="row align-items-center"> */}
+                        <div className="info-container">
+                            <div className="pokemon-image">
+                                <h2>Normal</h2>
                                 <img src={pokemon.sprites.front_default}
                                     className="card-img-top rounded mx-auto mt-2 pokemon-img" 
                                 />
                             </div>
-                            <div className="col-md-4">
-                                <h2>{pokemon.name}</h2>
-                                <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h6>
+                            <div className="pokemon-image">
+                                <h2>Shiny</h2>
+                                <img src={pokemon.sprites.front_shiny}
+                                    className="card-img-top rounded mx-auto mt-2 pokemon-img" 
+                                />
                             </div>
-                            <div>
-                                <h4>Abilities</h4>
-                                {pokemon.abilities.map((ability, i) => 
-                                    <>
-                                    <h5 key={ability.ability.name}>{ability.ability.name}</h5>  
-                                    </>
-                                )}
+                            <div className="pokemon-info">
+                                <h1>{pokemon.name}</h1>
+                                <h6>{pokemon.description}.</h6>
+                                <div className="abilities-container">
+                                    <h4>Abilities</h4>
+                                    {pokemon.abilities.map((ability, i) => 
+                                        <>
+                                        <h6 key={ability.ability.name}>{ability.ability.name}</h6>  
+                                        </>
+                                    )}
+                                </div>
                             </div>
-                            <div>
-                                <h6>Weight {pokemon.weight}</h6>
-                            </div>
-                            <div>
-                                <h6>Evolutions</h6>
+                            
+                            <div className="pokemon-info">
+                                
+                                <div>
+                                    <h4>Weight </h4><h6>{pokemon.weight / 10} kg</h6>
+                                    <h4>Height</h4><h6>{pokemon.height * 10} Cm</h6>
+                                </div>
                             </div>
                         </div>
                         <div className="col-md-9">
@@ -95,37 +94,6 @@ export default class Pokemon extends React.Component {
                     </div>
                 </div>
             </div>
-
-
-                    
-                    
-                    // <div>
-                    //     <h3>Stats</h3>
-                    //     {pokemon.stats.map((stat, i) => 
-                    //         <>
-                    //         <h4 key={stat.stat.name}>{stat.stat.name}</h4>  
-                    //         <h4 key={i}>{stat.base_stat}</h4>  
-                    //         </>
-                    //     )}
-                    // </div>
-                    // <div>
-                    //     <h3>Height</h3>
-                    //     <div>{pokemon.height * 10} Cm</div>
-                    // </div>
-                    // <div>
-                    //     <h3>Weight</h3>
-                    //     <div>{pokemon.weight / 10} Kg</div>
-                    // </div>
-
-                    // <div>
-                    //     <h3>Abilities</h3>
-                    //     {pokemon.abilities.map((ability, i) => 
-                    //         <>
-                    //         <h4 key={ability.ability.name}>{ability.ability.name}</h4>  
-                    //         </>
-                    //     )}
-                    // </div>
-                
         )
     }
 }
